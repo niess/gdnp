@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define/>
+
+  <materials>
+    <material Z="13" name="G4_Al0x25494d0" state="solid">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="166"/>
+      <D unit="g/cm3" value="2.699"/>
+      <atom unit="g/mole" value="26.9815"/>
+    </material>
+    <isotope N="23" Z="11" name="StandardRock230x2538400">
+      <atom unit="g/mole" value="22.9898"/>
+    </isotope>
+    <element name="StandardRock0x25380a0">
+      <fraction n="1" ref="StandardRock230x2538400"/>
+    </element>
+    <material name="StandardRock0x25381a0" state="solid">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="136.4"/>
+      <D unit="g/cm3" value="2"/>
+      <fraction n="0.5" ref="StandardRock0x25380a0"/>
+      <fraction n="0.5" ref="StandardRock0x25380a0"/>
+    </material>
+    <isotope N="12" Z="6" name="C120x2547d40">
+      <atom unit="g/mole" value="12"/>
+    </isotope>
+    <isotope N="13" Z="6" name="C130x2547db0">
+      <atom unit="g/mole" value="13.0034"/>
+    </isotope>
+    <element name="C0x2547ae0">
+      <fraction n="0.9893" ref="C120x2547d40"/>
+      <fraction n="0.0107" ref="C130x2547db0"/>
+    </element>
+    <isotope N="14" Z="7" name="N140x2547c50">
+      <atom unit="g/mole" value="14.0031"/>
+    </isotope>
+    <isotope N="15" Z="7" name="N150x2544ca0">
+      <atom unit="g/mole" value="15.0001"/>
+    </isotope>
+    <element name="N0x2547e20">
+      <fraction n="0.99632" ref="N140x2547c50"/>
+      <fraction n="0.00368" ref="N150x2544ca0"/>
+    </element>
+    <isotope N="16" Z="8" name="O160x2544ce0">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O170x2548010">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O180x2548320">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="O0x25480a0">
+      <fraction n="0.99757" ref="O160x2544ce0"/>
+      <fraction n="0.00038" ref="O170x2548010"/>
+      <fraction n="0.00205" ref="O180x2548320"/>
+    </element>
+    <isotope N="36" Z="18" name="Ar360x2548240">
+      <atom unit="g/mole" value="35.9675"/>
+    </isotope>
+    <isotope N="38" Z="18" name="Ar380x2548650">
+      <atom unit="g/mole" value="37.9627"/>
+    </isotope>
+    <isotope N="40" Z="18" name="Ar400x25486e0">
+      <atom unit="g/mole" value="39.9624"/>
+    </isotope>
+    <element name="Ar0x2548390">
+      <fraction n="0.003365" ref="Ar360x2548240"/>
+      <fraction n="0.000632" ref="Ar380x2548650"/>
+      <fraction n="0.996003" ref="Ar400x25486e0"/>
+    </element>
+    <material name="Air0x25488a0" state="gas">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="85.7"/>
+      <D unit="g/cm3" value="0.00119325022034547"/>
+      <fraction n="0.000124000124000124" ref="C0x2547ae0"/>
+      <fraction n="0.755267755267755" ref="N0x2547e20"/>
+      <fraction n="0.231781231781232" ref="O0x25480a0"/>
+      <fraction n="0.0128270128270128" ref="Ar0x2548390"/>
+    </material>
+  </materials>
+
+  <solids>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Detector0x2554910" rmax="500001" rmin="500000" startphi="0" z="10000"/>
+    <ellipsoid ax="600000" by="600000" cz="600000" lunit="mm" name="Ground0x2554d20" zcut1="-50000" zcut2="0"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano10x2554f80" rmax="1827474.71389417" rmin="0" startphi="0" z="2700"/>
+    <ellipsoid ax="600000" by="600000" cz="600000" lunit="mm" name="World0x2549db0" zcut1="-600000" zcut2="600000"/>
+    <intersection name="Volcano10x2555090">
+      <first ref="Volcano10x2554f80"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano10x2555090_pos" unit="mm" x="0" y="0" z="-1350"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano20x2555620" rmax="1442960.41286033" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano20x2555730">
+      <first ref="Volcano20x2555620"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano20x2555730_pos" unit="mm" x="0" y="0" z="-4050"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano30x2555bd0" rmax="1264171.44454223" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano30x2555ce0">
+      <first ref="Volcano30x2555bd0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano30x2555ce0_pos" unit="mm" x="0" y="0" z="-6750"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano40x25561a0" rmax="1146406.16172481" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano40x25562b0">
+      <first ref="Volcano40x25561a0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano40x25562b0_pos" unit="mm" x="0" y="0" z="-9450"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano50x2556750" rmax="1058446.11182649" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano50x2556860">
+      <first ref="Volcano50x2556750"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano50x2556860_pos" unit="mm" x="0" y="0" z="-12150"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano60x2556d00" rmax="988211.368414738" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano60x2556e10">
+      <first ref="Volcano60x2556d00"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano60x2556e10_pos" unit="mm" x="0" y="0" z="-14850"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano70x25572b0" rmax="929742.43878263" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano70x25573c0">
+      <first ref="Volcano70x25572b0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano70x25573c0_pos" unit="mm" x="0" y="0" z="-17550"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano80x25578f0" rmax="879657.143508394" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano80x2557a00">
+      <first ref="Volcano80x25578f0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano80x2557a00_pos" unit="mm" x="0" y="0" z="-20250"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano90x2557e50" rmax="835850.043474492" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano90x2557f60">
+      <first ref="Volcano90x2557e50"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano90x2557f60_pos" unit="mm" x="0" y="0" z="-22950"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano100x2558400" rmax="796921.071185914" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano100x2558510">
+      <first ref="Volcano100x2558400"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano100x2558510_pos" unit="mm" x="0" y="0" z="-25650"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano110x25589b0" rmax="761891.86069097" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano110x2558ac0">
+      <first ref="Volcano110x25589b0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano110x2558ac0_pos" unit="mm" x="0" y="0" z="-28350"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano120x2558f60" rmax="730051.738318965" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano120x2559070">
+      <first ref="Volcano120x2558f60"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano120x2559070_pos" unit="mm" x="0" y="0" z="-31050"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano130x2559510" rmax="700868.175190298" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano130x2559620">
+      <first ref="Volcano130x2559510"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano130x2559620_pos" unit="mm" x="0" y="0" z="-33750"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano140x2559ac0" rmax="673931.810792653" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano140x2559bd0">
+      <first ref="Volcano140x2559ac0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano140x2559bd0_pos" unit="mm" x="0" y="0" z="-36450"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano150x255a070" rmax="648921.173398902" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano150x255a180">
+      <first ref="Volcano150x255a070"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano150x255a180_pos" unit="mm" x="0" y="0" z="-39150"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano160x255a6c0" rmax="625579.192324367" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano160x255a7d0">
+      <first ref="Volcano160x255a6c0"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano160x255a7d0_pos" unit="mm" x="0" y="0" z="-41850"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano170x255ac70" rmax="603697.0673809" rmin="0" startphi="0" z="2700"/>
+    <intersection name="Volcano170x255ad80">
+      <first ref="Volcano170x255ac70"/>
+      <second ref="World0x2549db0"/>
+      <position name="Volcano170x255ad80_pos" unit="mm" x="0" y="0" z="-44550"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano180x255b220" rmax="583102.892372873" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano190x255b490" rmax="563653.444468689" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano200x255b740" rmax="545228.137748791" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano210x255b9f0" rmax="527724.49054766" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano220x255bca0" rmax="511054.673401421" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano230x255bf50" rmax="495142.842474556" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano240x255c200" rmax="479923.053295647" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano250x255c4b0" rmax="465337.609555448" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano260x255c760" rmax="451335.742440654" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano270x255ca10" rmax="437872.544150925" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano280x255ccc0" rmax="424908.099062803" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano290x255cf70" rmax="412406.770152075" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano300x255d220" rmax="400336.608527166" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano310x255d4d0" rmax="388668.861433509" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano320x255a490" rmax="377377.559657131" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano330x255db30" rmax="366439.169430695" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano340x255dde0" rmax="355832.29710733" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano350x255e090" rmax="345537.437285127" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano360x255e340" rmax="335536.756929707" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano370x255e5f0" rmax="325813.909492231" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano380x255e8a0" rmax="316353.874156459" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano390x255eb50" rmax="307142.816245378" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano400x255ee00" rmax="298167.96553071" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano410x255f0b0" rmax="289417.509758814" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano420x255f360" rmax="280880.501165358" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano430x255f610" rmax="272546.774122557" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano440x255f8c0" rmax="264406.872365063" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano450x255fb70" rmax="256451.984487919" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano460x255fe20" rmax="248673.88661327" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano470x25600d0" rmax="241064.891290528" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano480x2560380" rmax="233617.801833978" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano490x2560630" rmax="226325.871417984" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano500x25608e0" rmax="219182.766347061" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano510x2560b90" rmax="212182.532999727" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano520x2560e40" rmax="205319.568013795" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano530x25610f0" rmax="200679.629071829" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano540x25613a0" rmax="197719.582377121" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano550x2561650" rmax="194770.615776433" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano560x2561900" rmax="191831.170113805" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano570x2561bb0" rmax="188899.700210802" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano580x2561e60" rmax="185974.668669013" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano590x2562110" rmax="183054.539644316" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano600x25623c0" rmax="180137.772523648" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano610x2562670" rmax="177222.815431467" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano620x2562920" rmax="174308.098487925" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano630x2562bd0" rmax="171392.026733622" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano640x255d750" rmax="168472.972626443" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano650x2549ed0" rmax="165549.268003963" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano660x25638e0" rmax="162619.19538966" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano670x2563b90" rmax="159680.978502114" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano680x2563e40" rmax="156732.77180236" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano690x25640f0" rmax="153772.648884626" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano700x25643a0" rmax="150798.589478099" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano710x2564650" rmax="147808.464779988" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano720x2564900" rmax="144800.020780413" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano730x2564bb0" rmax="141770.859163534" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano740x2564e60" rmax="138718.415272023" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano750x2565110" rmax="135639.932496522" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano760x25653c0" rmax="132532.432288552" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano770x2565670" rmax="129392.678781395" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano780x2565920" rmax="126217.136720017" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano790x2565bd0" rmax="123001.921021515" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano800x2565e80" rmax="119742.735773357" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano810x2566130" rmax="116434.799771045" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano820x25663e0" rmax="113072.754714961" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano830x2566690" rmax="109650.550798736" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano840x2566940" rmax="106161.302427981" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano850x2566bf0" rmax="102597.103889731" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano860x2566ea0" rmax="98948.7904313951" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano870x2567150" rmax="95205.6235373794" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano880x2567400" rmax="91354.8687210088" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano890x25676b0" rmax="87381.2172230856" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano900x2567960" rmax="83265.9747087921" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano910x2567c10" rmax="78985.8908612056" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano920x2567ec0" rmax="74511.4142709934" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano930x2568190" rmax="69803.9851430926" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano940x2568440" rmax="64811.6259311609" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano950x25686f0" rmax="59461.3064776142" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano960x25689a0" rmax="53644.6284015281" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano970x2568c50" rmax="47187.9073778129" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano980x2568f00" rmax="39778.9265694566" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano990x2550310" rmax="30734.384053176" rmin="0" startphi="0" z="2700"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="Volcano1000x2554610" rmax="17699.8266650163" rmin="0" startphi="0" z="2700"/>
+  </solids>
+
+  <structure>
+    <volume name="Detector0x2554a20">
+      <materialref ref="G4_Al0x25494d0"/>
+      <solidref ref="Detector0x2554910"/>
+    </volume>
+    <volume name="Ground0x2554de0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Ground0x2554d20"/>
+    </volume>
+    <volume name="Volcano10x2555260">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano10x2555090"/>
+    </volume>
+    <volume name="Volcano20x25558e0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano20x2555730"/>
+    </volume>
+    <volume name="Volcano30x2555e90">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano30x2555ce0"/>
+    </volume>
+    <volume name="Volcano40x2556460">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano40x25562b0"/>
+    </volume>
+    <volume name="Volcano50x2556a10">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano50x2556860"/>
+    </volume>
+    <volume name="Volcano60x2556fc0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano60x2556e10"/>
+    </volume>
+    <volume name="Volcano70x2557570">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano70x25573c0"/>
+    </volume>
+    <volume name="Volcano80x2557b60">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano80x2557a00"/>
+    </volume>
+    <volume name="Volcano90x2558110">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano90x2557f60"/>
+    </volume>
+    <volume name="Volcano100x25586c0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano100x2558510"/>
+    </volume>
+    <volume name="Volcano110x2558c70">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano110x2558ac0"/>
+    </volume>
+    <volume name="Volcano120x2559220">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano120x2559070"/>
+    </volume>
+    <volume name="Volcano130x25597d0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano130x2559620"/>
+    </volume>
+    <volume name="Volcano140x2559d80">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano140x2559bd0"/>
+    </volume>
+    <volume name="Volcano150x255a330">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano150x255a180"/>
+    </volume>
+    <volume name="Volcano160x255a980">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano160x255a7d0"/>
+    </volume>
+    <volume name="Volcano170x255af30">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano170x255ad80"/>
+    </volume>
+    <volume name="Volcano180x255b330">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano180x255b220"/>
+    </volume>
+    <volume name="Volcano190x255b5a0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano190x255b490"/>
+    </volume>
+    <volume name="Volcano200x255b850">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano200x255b740"/>
+    </volume>
+    <volume name="Volcano210x255bb00">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano210x255b9f0"/>
+    </volume>
+    <volume name="Volcano220x255bdb0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano220x255bca0"/>
+    </volume>
+    <volume name="Volcano230x255c060">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano230x255bf50"/>
+    </volume>
+    <volume name="Volcano240x255c310">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano240x255c200"/>
+    </volume>
+    <volume name="Volcano250x255c5c0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano250x255c4b0"/>
+    </volume>
+    <volume name="Volcano260x255c870">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano260x255c760"/>
+    </volume>
+    <volume name="Volcano270x255cb20">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano270x255ca10"/>
+    </volume>
+    <volume name="Volcano280x255cdd0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano280x255ccc0"/>
+    </volume>
+    <volume name="Volcano290x255d080">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano290x255cf70"/>
+    </volume>
+    <volume name="Volcano300x255d330">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano300x255d220"/>
+    </volume>
+    <volume name="Volcano310x255d5e0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano310x255d4d0"/>
+    </volume>
+    <volume name="Volcano320x255d990">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano320x255a490"/>
+    </volume>
+    <volume name="Volcano330x255dc40">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano330x255db30"/>
+    </volume>
+    <volume name="Volcano340x255def0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano340x255dde0"/>
+    </volume>
+    <volume name="Volcano350x255e1a0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano350x255e090"/>
+    </volume>
+    <volume name="Volcano360x255e450">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano360x255e340"/>
+    </volume>
+    <volume name="Volcano370x255e700">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano370x255e5f0"/>
+    </volume>
+    <volume name="Volcano380x255e9b0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano380x255e8a0"/>
+    </volume>
+    <volume name="Volcano390x255ec60">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano390x255eb50"/>
+    </volume>
+    <volume name="Volcano400x255ef10">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano400x255ee00"/>
+    </volume>
+    <volume name="Volcano410x255f1c0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano410x255f0b0"/>
+    </volume>
+    <volume name="Volcano420x255f470">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano420x255f360"/>
+    </volume>
+    <volume name="Volcano430x255f720">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano430x255f610"/>
+    </volume>
+    <volume name="Volcano440x255f9d0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano440x255f8c0"/>
+    </volume>
+    <volume name="Volcano450x255fc80">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano450x255fb70"/>
+    </volume>
+    <volume name="Volcano460x255ff30">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano460x255fe20"/>
+    </volume>
+    <volume name="Volcano470x25601e0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano470x25600d0"/>
+    </volume>
+    <volume name="Volcano480x2560490">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano480x2560380"/>
+    </volume>
+    <volume name="Volcano490x2560740">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano490x2560630"/>
+    </volume>
+    <volume name="Volcano500x25609f0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano500x25608e0"/>
+    </volume>
+    <volume name="Volcano510x2560ca0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano510x2560b90"/>
+    </volume>
+    <volume name="Volcano520x2560f50">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano520x2560e40"/>
+    </volume>
+    <volume name="Volcano530x2561200">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano530x25610f0"/>
+    </volume>
+    <volume name="Volcano540x25614b0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano540x25613a0"/>
+    </volume>
+    <volume name="Volcano550x2561760">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano550x2561650"/>
+    </volume>
+    <volume name="Volcano560x2561a10">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano560x2561900"/>
+    </volume>
+    <volume name="Volcano570x2561cc0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano570x2561bb0"/>
+    </volume>
+    <volume name="Volcano580x2561f70">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano580x2561e60"/>
+    </volume>
+    <volume name="Volcano590x2562220">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano590x2562110"/>
+    </volume>
+    <volume name="Volcano600x25624d0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano600x25623c0"/>
+    </volume>
+    <volume name="Volcano610x2562780">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano610x2562670"/>
+    </volume>
+    <volume name="Volcano620x2562a30">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano620x2562920"/>
+    </volume>
+    <volume name="Volcano630x2562ce0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano630x2562bd0"/>
+    </volume>
+    <volume name="Volcano640x255d830">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano640x255d750"/>
+    </volume>
+    <volume name="Volcano650x2549fe0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano650x2549ed0"/>
+    </volume>
+    <volume name="Volcano660x25639f0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano660x25638e0"/>
+    </volume>
+    <volume name="Volcano670x2563ca0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano670x2563b90"/>
+    </volume>
+    <volume name="Volcano680x2563f50">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano680x2563e40"/>
+    </volume>
+    <volume name="Volcano690x2564200">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano690x25640f0"/>
+    </volume>
+    <volume name="Volcano700x25644b0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano700x25643a0"/>
+    </volume>
+    <volume name="Volcano710x2564760">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano710x2564650"/>
+    </volume>
+    <volume name="Volcano720x2564a10">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano720x2564900"/>
+    </volume>
+    <volume name="Volcano730x2564cc0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano730x2564bb0"/>
+    </volume>
+    <volume name="Volcano740x2564f70">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano740x2564e60"/>
+    </volume>
+    <volume name="Volcano750x2565220">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano750x2565110"/>
+    </volume>
+    <volume name="Volcano760x25654d0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano760x25653c0"/>
+    </volume>
+    <volume name="Volcano770x2565780">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano770x2565670"/>
+    </volume>
+    <volume name="Volcano780x2565a30">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano780x2565920"/>
+    </volume>
+    <volume name="Volcano790x2565ce0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano790x2565bd0"/>
+    </volume>
+    <volume name="Volcano800x2565f90">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano800x2565e80"/>
+    </volume>
+    <volume name="Volcano810x2566240">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano810x2566130"/>
+    </volume>
+    <volume name="Volcano820x25664f0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano820x25663e0"/>
+    </volume>
+    <volume name="Volcano830x25667a0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano830x2566690"/>
+    </volume>
+    <volume name="Volcano840x2566a50">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano840x2566940"/>
+    </volume>
+    <volume name="Volcano850x2566d00">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano850x2566bf0"/>
+    </volume>
+    <volume name="Volcano860x2566fb0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano860x2566ea0"/>
+    </volume>
+    <volume name="Volcano870x2567260">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano870x2567150"/>
+    </volume>
+    <volume name="Volcano880x2567510">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano880x2567400"/>
+    </volume>
+    <volume name="Volcano890x25677c0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano890x25676b0"/>
+    </volume>
+    <volume name="Volcano900x2567a70">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano900x2567960"/>
+    </volume>
+    <volume name="Volcano910x2567d20">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano910x2567c10"/>
+    </volume>
+    <volume name="Volcano920x2567fd0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano920x2567ec0"/>
+    </volume>
+    <volume name="Volcano930x25682a0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano930x2568190"/>
+    </volume>
+    <volume name="Volcano940x2568550">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano940x2568440"/>
+    </volume>
+    <volume name="Volcano950x2568800">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano950x25686f0"/>
+    </volume>
+    <volume name="Volcano960x2568ab0">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano960x25689a0"/>
+    </volume>
+    <volume name="Volcano970x2568d60">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano970x2568c50"/>
+    </volume>
+    <volume name="Volcano980x2569010">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano980x2568f00"/>
+    </volume>
+    <volume name="Volcano990x2550420">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano990x2550310"/>
+    </volume>
+    <volume name="Volcano1000x2554720">
+      <materialref ref="StandardRock0x25381a0"/>
+      <solidref ref="Volcano1000x2554610"/>
+    </volume>
+    <volume name="World0x254a1a0">
+      <materialref ref="Air0x25488a0"/>
+      <solidref ref="World0x2549db0"/>
+      <physvol name="Detector0x2554c30">
+        <volumeref ref="Detector0x2554a20"/>
+        <position name="Detector0x2554c30_pos" unit="mm" x="0" y="0" z="65000"/>
+      </physvol>
+      <physvol name="Ground0x2554ee0">
+        <volumeref ref="Ground0x2554de0"/>
+      </physvol>
+      <physvol name="Volcano10x2555360">
+        <volumeref ref="Volcano10x2555260"/>
+        <position name="Volcano10x2555360_pos" unit="mm" x="0" y="0" z="1350"/>
+      </physvol>
+      <physvol name="Volcano20x25559a0">
+        <volumeref ref="Volcano20x25558e0"/>
+        <position name="Volcano20x25559a0_pos" unit="mm" x="0" y="0" z="4050"/>
+      </physvol>
+      <physvol name="Volcano30x2555f50">
+        <volumeref ref="Volcano30x2555e90"/>
+        <position name="Volcano30x2555f50_pos" unit="mm" x="0" y="0" z="6750"/>
+      </physvol>
+      <physvol name="Volcano40x2556520">
+        <volumeref ref="Volcano40x2556460"/>
+        <position name="Volcano40x2556520_pos" unit="mm" x="0" y="0" z="9450"/>
+      </physvol>
+      <physvol name="Volcano50x2556ad0">
+        <volumeref ref="Volcano50x2556a10"/>
+        <position name="Volcano50x2556ad0_pos" unit="mm" x="0" y="0" z="12150"/>
+      </physvol>
+      <physvol name="Volcano60x2557080">
+        <volumeref ref="Volcano60x2556fc0"/>
+        <position name="Volcano60x2557080_pos" unit="mm" x="0" y="0" z="14850"/>
+      </physvol>
+      <physvol name="Volcano70x2557630">
+        <volumeref ref="Volcano70x2557570"/>
+        <position name="Volcano70x2557630_pos" unit="mm" x="0" y="0" z="17550"/>
+      </physvol>
+      <physvol name="Volcano80x2557c20">
+        <volumeref ref="Volcano80x2557b60"/>
+        <position name="Volcano80x2557c20_pos" unit="mm" x="0" y="0" z="20250"/>
+      </physvol>
+      <physvol name="Volcano90x25581d0">
+        <volumeref ref="Volcano90x2558110"/>
+        <position name="Volcano90x25581d0_pos" unit="mm" x="0" y="0" z="22950"/>
+      </physvol>
+      <physvol name="Volcano100x2558780">
+        <volumeref ref="Volcano100x25586c0"/>
+        <position name="Volcano100x2558780_pos" unit="mm" x="0" y="0" z="25650"/>
+      </physvol>
+      <physvol name="Volcano110x2558d30">
+        <volumeref ref="Volcano110x2558c70"/>
+        <position name="Volcano110x2558d30_pos" unit="mm" x="0" y="0" z="28350"/>
+      </physvol>
+      <physvol name="Volcano120x25592e0">
+        <volumeref ref="Volcano120x2559220"/>
+        <position name="Volcano120x25592e0_pos" unit="mm" x="0" y="0" z="31050"/>
+      </physvol>
+      <physvol name="Volcano130x2559890">
+        <volumeref ref="Volcano130x25597d0"/>
+        <position name="Volcano130x2559890_pos" unit="mm" x="0" y="0" z="33750"/>
+      </physvol>
+      <physvol name="Volcano140x2559e40">
+        <volumeref ref="Volcano140x2559d80"/>
+        <position name="Volcano140x2559e40_pos" unit="mm" x="0" y="0" z="36450"/>
+      </physvol>
+      <physvol name="Volcano150x255a3f0">
+        <volumeref ref="Volcano150x255a330"/>
+        <position name="Volcano150x255a3f0_pos" unit="mm" x="0" y="0" z="39150"/>
+      </physvol>
+      <physvol name="Volcano160x255aa40">
+        <volumeref ref="Volcano160x255a980"/>
+        <position name="Volcano160x255aa40_pos" unit="mm" x="0" y="0" z="41850"/>
+      </physvol>
+      <physvol name="Volcano170x255aff0">
+        <volumeref ref="Volcano170x255af30"/>
+        <position name="Volcano170x255aff0_pos" unit="mm" x="0" y="0" z="44550"/>
+      </physvol>
+      <physvol name="Volcano180x255b3f0">
+        <volumeref ref="Volcano180x255b330"/>
+        <position name="Volcano180x255b3f0_pos" unit="mm" x="0" y="0" z="47250"/>
+      </physvol>
+      <physvol name="Volcano190x255b6a0">
+        <volumeref ref="Volcano190x255b5a0"/>
+        <position name="Volcano190x255b6a0_pos" unit="mm" x="0" y="0" z="49950"/>
+      </physvol>
+      <physvol name="Volcano200x255b950">
+        <volumeref ref="Volcano200x255b850"/>
+        <position name="Volcano200x255b950_pos" unit="mm" x="0" y="0" z="52650"/>
+      </physvol>
+      <physvol name="Volcano210x255bc00">
+        <volumeref ref="Volcano210x255bb00"/>
+        <position name="Volcano210x255bc00_pos" unit="mm" x="0" y="0" z="55350"/>
+      </physvol>
+      <physvol name="Volcano220x255beb0">
+        <volumeref ref="Volcano220x255bdb0"/>
+        <position name="Volcano220x255beb0_pos" unit="mm" x="0" y="0" z="58050"/>
+      </physvol>
+      <physvol name="Volcano230x255c160">
+        <volumeref ref="Volcano230x255c060"/>
+        <position name="Volcano230x255c160_pos" unit="mm" x="0" y="0" z="60750"/>
+      </physvol>
+      <physvol name="Volcano240x255c410">
+        <volumeref ref="Volcano240x255c310"/>
+        <position name="Volcano240x255c410_pos" unit="mm" x="0" y="0" z="63450"/>
+      </physvol>
+      <physvol name="Volcano250x255c6c0">
+        <volumeref ref="Volcano250x255c5c0"/>
+        <position name="Volcano250x255c6c0_pos" unit="mm" x="0" y="0" z="66150"/>
+      </physvol>
+      <physvol name="Volcano260x255c970">
+        <volumeref ref="Volcano260x255c870"/>
+        <position name="Volcano260x255c970_pos" unit="mm" x="0" y="0" z="68850"/>
+      </physvol>
+      <physvol name="Volcano270x255cc20">
+        <volumeref ref="Volcano270x255cb20"/>
+        <position name="Volcano270x255cc20_pos" unit="mm" x="0" y="0" z="71550"/>
+      </physvol>
+      <physvol name="Volcano280x255ced0">
+        <volumeref ref="Volcano280x255cdd0"/>
+        <position name="Volcano280x255ced0_pos" unit="mm" x="0" y="0" z="74250"/>
+      </physvol>
+      <physvol name="Volcano290x255d180">
+        <volumeref ref="Volcano290x255d080"/>
+        <position name="Volcano290x255d180_pos" unit="mm" x="0" y="0" z="76950"/>
+      </physvol>
+      <physvol name="Volcano300x255d430">
+        <volumeref ref="Volcano300x255d330"/>
+        <position name="Volcano300x255d430_pos" unit="mm" x="0" y="0" z="79650"/>
+      </physvol>
+      <physvol name="Volcano310x255d6e0">
+        <volumeref ref="Volcano310x255d5e0"/>
+        <position name="Volcano310x255d6e0_pos" unit="mm" x="0" y="0" z="82350.0000000001"/>
+      </physvol>
+      <physvol name="Volcano320x255da90">
+        <volumeref ref="Volcano320x255d990"/>
+        <position name="Volcano320x255da90_pos" unit="mm" x="0" y="0" z="85050.0000000001"/>
+      </physvol>
+      <physvol name="Volcano330x255dd40">
+        <volumeref ref="Volcano330x255dc40"/>
+        <position name="Volcano330x255dd40_pos" unit="mm" x="0" y="0" z="87750.0000000001"/>
+      </physvol>
+      <physvol name="Volcano340x255dff0">
+        <volumeref ref="Volcano340x255def0"/>
+        <position name="Volcano340x255dff0_pos" unit="mm" x="0" y="0" z="90450.0000000001"/>
+      </physvol>
+      <physvol name="Volcano350x255e2a0">
+        <volumeref ref="Volcano350x255e1a0"/>
+        <position name="Volcano350x255e2a0_pos" unit="mm" x="0" y="0" z="93150.0000000001"/>
+      </physvol>
+      <physvol name="Volcano360x255e550">
+        <volumeref ref="Volcano360x255e450"/>
+        <position name="Volcano360x255e550_pos" unit="mm" x="0" y="0" z="95850.0000000001"/>
+      </physvol>
+      <physvol name="Volcano370x255e800">
+        <volumeref ref="Volcano370x255e700"/>
+        <position name="Volcano370x255e800_pos" unit="mm" x="0" y="0" z="98550.0000000001"/>
+      </physvol>
+      <physvol name="Volcano380x255eab0">
+        <volumeref ref="Volcano380x255e9b0"/>
+        <position name="Volcano380x255eab0_pos" unit="mm" x="0" y="0" z="101250"/>
+      </physvol>
+      <physvol name="Volcano390x255ed60">
+        <volumeref ref="Volcano390x255ec60"/>
+        <position name="Volcano390x255ed60_pos" unit="mm" x="0" y="0" z="103950"/>
+      </physvol>
+      <physvol name="Volcano400x255f010">
+        <volumeref ref="Volcano400x255ef10"/>
+        <position name="Volcano400x255f010_pos" unit="mm" x="0" y="0" z="106650"/>
+      </physvol>
+      <physvol name="Volcano410x255f2c0">
+        <volumeref ref="Volcano410x255f1c0"/>
+        <position name="Volcano410x255f2c0_pos" unit="mm" x="0" y="0" z="109350"/>
+      </physvol>
+      <physvol name="Volcano420x255f570">
+        <volumeref ref="Volcano420x255f470"/>
+        <position name="Volcano420x255f570_pos" unit="mm" x="0" y="0" z="112050"/>
+      </physvol>
+      <physvol name="Volcano430x255f820">
+        <volumeref ref="Volcano430x255f720"/>
+        <position name="Volcano430x255f820_pos" unit="mm" x="0" y="0" z="114750"/>
+      </physvol>
+      <physvol name="Volcano440x255fad0">
+        <volumeref ref="Volcano440x255f9d0"/>
+        <position name="Volcano440x255fad0_pos" unit="mm" x="0" y="0" z="117450"/>
+      </physvol>
+      <physvol name="Volcano450x255fd80">
+        <volumeref ref="Volcano450x255fc80"/>
+        <position name="Volcano450x255fd80_pos" unit="mm" x="0" y="0" z="120150"/>
+      </physvol>
+      <physvol name="Volcano460x2560030">
+        <volumeref ref="Volcano460x255ff30"/>
+        <position name="Volcano460x2560030_pos" unit="mm" x="0" y="0" z="122850"/>
+      </physvol>
+      <physvol name="Volcano470x25602e0">
+        <volumeref ref="Volcano470x25601e0"/>
+        <position name="Volcano470x25602e0_pos" unit="mm" x="0" y="0" z="125550"/>
+      </physvol>
+      <physvol name="Volcano480x2560590">
+        <volumeref ref="Volcano480x2560490"/>
+        <position name="Volcano480x2560590_pos" unit="mm" x="0" y="0" z="128250"/>
+      </physvol>
+      <physvol name="Volcano490x2560840">
+        <volumeref ref="Volcano490x2560740"/>
+        <position name="Volcano490x2560840_pos" unit="mm" x="0" y="0" z="130950"/>
+      </physvol>
+      <physvol name="Volcano500x2560af0">
+        <volumeref ref="Volcano500x25609f0"/>
+        <position name="Volcano500x2560af0_pos" unit="mm" x="0" y="0" z="133650"/>
+      </physvol>
+      <physvol name="Volcano510x2560da0">
+        <volumeref ref="Volcano510x2560ca0"/>
+        <position name="Volcano510x2560da0_pos" unit="mm" x="0" y="0" z="136350"/>
+      </physvol>
+      <physvol name="Volcano520x2561050">
+        <volumeref ref="Volcano520x2560f50"/>
+        <position name="Volcano520x2561050_pos" unit="mm" x="0" y="0" z="139050"/>
+      </physvol>
+      <physvol name="Volcano530x2561300">
+        <volumeref ref="Volcano530x2561200"/>
+        <position name="Volcano530x2561300_pos" unit="mm" x="0" y="0" z="141750"/>
+      </physvol>
+      <physvol name="Volcano540x25615b0">
+        <volumeref ref="Volcano540x25614b0"/>
+        <position name="Volcano540x25615b0_pos" unit="mm" x="0" y="0" z="144450"/>
+      </physvol>
+      <physvol name="Volcano550x2561860">
+        <volumeref ref="Volcano550x2561760"/>
+        <position name="Volcano550x2561860_pos" unit="mm" x="0" y="0" z="147150"/>
+      </physvol>
+      <physvol name="Volcano560x2561b10">
+        <volumeref ref="Volcano560x2561a10"/>
+        <position name="Volcano560x2561b10_pos" unit="mm" x="0" y="0" z="149850"/>
+      </physvol>
+      <physvol name="Volcano570x2561dc0">
+        <volumeref ref="Volcano570x2561cc0"/>
+        <position name="Volcano570x2561dc0_pos" unit="mm" x="0" y="0" z="152550"/>
+      </physvol>
+      <physvol name="Volcano580x2562070">
+        <volumeref ref="Volcano580x2561f70"/>
+        <position name="Volcano580x2562070_pos" unit="mm" x="0" y="0" z="155250"/>
+      </physvol>
+      <physvol name="Volcano590x2562320">
+        <volumeref ref="Volcano590x2562220"/>
+        <position name="Volcano590x2562320_pos" unit="mm" x="0" y="0" z="157950"/>
+      </physvol>
+      <physvol name="Volcano600x25625d0">
+        <volumeref ref="Volcano600x25624d0"/>
+        <position name="Volcano600x25625d0_pos" unit="mm" x="0" y="0" z="160650"/>
+      </physvol>
+      <physvol name="Volcano610x2562880">
+        <volumeref ref="Volcano610x2562780"/>
+        <position name="Volcano610x2562880_pos" unit="mm" x="0" y="0" z="163350"/>
+      </physvol>
+      <physvol name="Volcano620x2562b30">
+        <volumeref ref="Volcano620x2562a30"/>
+        <position name="Volcano620x2562b30_pos" unit="mm" x="0" y="0" z="166050"/>
+      </physvol>
+      <physvol name="Volcano630x2562de0">
+        <volumeref ref="Volcano630x2562ce0"/>
+        <position name="Volcano630x2562de0_pos" unit="mm" x="0" y="0" z="168750"/>
+      </physvol>
+      <physvol name="Volcano640x25555c0">
+        <volumeref ref="Volcano640x255d830"/>
+        <position name="Volcano640x25555c0_pos" unit="mm" x="0" y="0" z="171450"/>
+      </physvol>
+      <physvol name="Volcano650x254a0e0">
+        <volumeref ref="Volcano650x2549fe0"/>
+        <position name="Volcano650x254a0e0_pos" unit="mm" x="0" y="0" z="174150"/>
+      </physvol>
+      <physvol name="Volcano660x2563af0">
+        <volumeref ref="Volcano660x25639f0"/>
+        <position name="Volcano660x2563af0_pos" unit="mm" x="0" y="0" z="176850"/>
+      </physvol>
+      <physvol name="Volcano670x2563da0">
+        <volumeref ref="Volcano670x2563ca0"/>
+        <position name="Volcano670x2563da0_pos" unit="mm" x="0" y="0" z="179550"/>
+      </physvol>
+      <physvol name="Volcano680x2564050">
+        <volumeref ref="Volcano680x2563f50"/>
+        <position name="Volcano680x2564050_pos" unit="mm" x="0" y="0" z="182250"/>
+      </physvol>
+      <physvol name="Volcano690x2564300">
+        <volumeref ref="Volcano690x2564200"/>
+        <position name="Volcano690x2564300_pos" unit="mm" x="0" y="0" z="184950"/>
+      </physvol>
+      <physvol name="Volcano700x25645b0">
+        <volumeref ref="Volcano700x25644b0"/>
+        <position name="Volcano700x25645b0_pos" unit="mm" x="0" y="0" z="187650"/>
+      </physvol>
+      <physvol name="Volcano710x2564860">
+        <volumeref ref="Volcano710x2564760"/>
+        <position name="Volcano710x2564860_pos" unit="mm" x="0" y="0" z="190350"/>
+      </physvol>
+      <physvol name="Volcano720x2564b10">
+        <volumeref ref="Volcano720x2564a10"/>
+        <position name="Volcano720x2564b10_pos" unit="mm" x="0" y="0" z="193050"/>
+      </physvol>
+      <physvol name="Volcano730x2564dc0">
+        <volumeref ref="Volcano730x2564cc0"/>
+        <position name="Volcano730x2564dc0_pos" unit="mm" x="0" y="0" z="195750"/>
+      </physvol>
+      <physvol name="Volcano740x2565070">
+        <volumeref ref="Volcano740x2564f70"/>
+        <position name="Volcano740x2565070_pos" unit="mm" x="0" y="0" z="198450"/>
+      </physvol>
+      <physvol name="Volcano750x2565320">
+        <volumeref ref="Volcano750x2565220"/>
+        <position name="Volcano750x2565320_pos" unit="mm" x="0" y="0" z="201150"/>
+      </physvol>
+      <physvol name="Volcano760x25655d0">
+        <volumeref ref="Volcano760x25654d0"/>
+        <position name="Volcano760x25655d0_pos" unit="mm" x="0" y="0" z="203850"/>
+      </physvol>
+      <physvol name="Volcano770x2565880">
+        <volumeref ref="Volcano770x2565780"/>
+        <position name="Volcano770x2565880_pos" unit="mm" x="0" y="0" z="206550"/>
+      </physvol>
+      <physvol name="Volcano780x2565b30">
+        <volumeref ref="Volcano780x2565a30"/>
+        <position name="Volcano780x2565b30_pos" unit="mm" x="0" y="0" z="209250"/>
+      </physvol>
+      <physvol name="Volcano790x2565de0">
+        <volumeref ref="Volcano790x2565ce0"/>
+        <position name="Volcano790x2565de0_pos" unit="mm" x="0" y="0" z="211950"/>
+      </physvol>
+      <physvol name="Volcano800x2566090">
+        <volumeref ref="Volcano800x2565f90"/>
+        <position name="Volcano800x2566090_pos" unit="mm" x="0" y="0" z="214650"/>
+      </physvol>
+      <physvol name="Volcano810x2566340">
+        <volumeref ref="Volcano810x2566240"/>
+        <position name="Volcano810x2566340_pos" unit="mm" x="0" y="0" z="217350"/>
+      </physvol>
+      <physvol name="Volcano820x25665f0">
+        <volumeref ref="Volcano820x25664f0"/>
+        <position name="Volcano820x25665f0_pos" unit="mm" x="0" y="0" z="220050"/>
+      </physvol>
+      <physvol name="Volcano830x25668a0">
+        <volumeref ref="Volcano830x25667a0"/>
+        <position name="Volcano830x25668a0_pos" unit="mm" x="0" y="0" z="222750"/>
+      </physvol>
+      <physvol name="Volcano840x2566b50">
+        <volumeref ref="Volcano840x2566a50"/>
+        <position name="Volcano840x2566b50_pos" unit="mm" x="0" y="0" z="225450"/>
+      </physvol>
+      <physvol name="Volcano850x2566e00">
+        <volumeref ref="Volcano850x2566d00"/>
+        <position name="Volcano850x2566e00_pos" unit="mm" x="0" y="0" z="228150"/>
+      </physvol>
+      <physvol name="Volcano860x25670b0">
+        <volumeref ref="Volcano860x2566fb0"/>
+        <position name="Volcano860x25670b0_pos" unit="mm" x="0" y="0" z="230850"/>
+      </physvol>
+      <physvol name="Volcano870x2567360">
+        <volumeref ref="Volcano870x2567260"/>
+        <position name="Volcano870x2567360_pos" unit="mm" x="0" y="0" z="233550"/>
+      </physvol>
+      <physvol name="Volcano880x2567610">
+        <volumeref ref="Volcano880x2567510"/>
+        <position name="Volcano880x2567610_pos" unit="mm" x="0" y="0" z="236250"/>
+      </physvol>
+      <physvol name="Volcano890x25678c0">
+        <volumeref ref="Volcano890x25677c0"/>
+        <position name="Volcano890x25678c0_pos" unit="mm" x="0" y="0" z="238950"/>
+      </physvol>
+      <physvol name="Volcano900x2567b70">
+        <volumeref ref="Volcano900x2567a70"/>
+        <position name="Volcano900x2567b70_pos" unit="mm" x="0" y="0" z="241650"/>
+      </physvol>
+      <physvol name="Volcano910x2567e20">
+        <volumeref ref="Volcano910x2567d20"/>
+        <position name="Volcano910x2567e20_pos" unit="mm" x="0" y="0" z="244350"/>
+      </physvol>
+      <physvol name="Volcano920x2568090">
+        <volumeref ref="Volcano920x2567fd0"/>
+        <position name="Volcano920x2568090_pos" unit="mm" x="0" y="0" z="247050"/>
+      </physvol>
+      <physvol name="Volcano930x25683a0">
+        <volumeref ref="Volcano930x25682a0"/>
+        <position name="Volcano930x25683a0_pos" unit="mm" x="0" y="0" z="249750"/>
+      </physvol>
+      <physvol name="Volcano940x2568650">
+        <volumeref ref="Volcano940x2568550"/>
+        <position name="Volcano940x2568650_pos" unit="mm" x="0" y="0" z="252450"/>
+      </physvol>
+      <physvol name="Volcano950x2568900">
+        <volumeref ref="Volcano950x2568800"/>
+        <position name="Volcano950x2568900_pos" unit="mm" x="0" y="0" z="255150"/>
+      </physvol>
+      <physvol name="Volcano960x2568bb0">
+        <volumeref ref="Volcano960x2568ab0"/>
+        <position name="Volcano960x2568bb0_pos" unit="mm" x="0" y="0" z="257850"/>
+      </physvol>
+      <physvol name="Volcano970x2568e60">
+        <volumeref ref="Volcano970x2568d60"/>
+        <position name="Volcano970x2568e60_pos" unit="mm" x="0" y="0" z="260550"/>
+      </physvol>
+      <physvol name="Volcano980x2550240">
+        <volumeref ref="Volcano980x2569010"/>
+        <position name="Volcano980x2550240_pos" unit="mm" x="0" y="0" z="263250"/>
+      </physvol>
+      <physvol name="Volcano990x2550520">
+        <volumeref ref="Volcano990x2550420"/>
+        <position name="Volcano990x2550520_pos" unit="mm" x="0" y="0" z="265950"/>
+      </physvol>
+      <physvol name="Volcano1000x2554820">
+        <volumeref ref="Volcano1000x2554720"/>
+        <position name="Volcano1000x2554820_pos" unit="mm" x="0" y="0" z="268650"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="World0x254a1a0"/>
+  </setup>
+
+</gdml>
